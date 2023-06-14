@@ -46,6 +46,7 @@ namespace ReactMaaserTrackerMUI.Web.Controllers
             };
 
             var amountRequiredToGive = vm.TotalIncome * .10m;
+            vm.ObligatedAmount = amountRequiredToGive;
             vm.RemainingObligation = amountRequiredToGive - vm.TotalMaaser;
             return vm;
         }
