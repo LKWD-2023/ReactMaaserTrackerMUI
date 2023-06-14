@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, TextField, Button, Typography } from '@mui/material';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from 'dayjs';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -24,10 +23,11 @@ const AddMaaserPage =() => {
             </Typography>
             <TextField value={recipient} onChange={e => setRecipient(e.target.value)} label="Recipient" variant="outlined" fullWidth margin="normal" />
             <TextField value={amount} onChange={e => setAmount(e.target.value)} label="Amount" variant="outlined" fullWidth type="number" margin="normal" />
-            <DatePicker
+            <TextField
                 label="Date"
-                value={dayjs(date)}
-                onChange={date => setDate(date)}
+                type="date"
+                value={dayjs(date).format('YYYY-MM-DD')}
+                onChange={e => setDate(e.target.value)}
                 renderInput={(params) => <TextField {...params} fullWidth margin="normal" variant="outlined" />}
             />
             <Button variant="contained" color="primary" onClick={onAddClick}>Add Maaser</Button>

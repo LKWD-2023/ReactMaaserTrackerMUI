@@ -54,10 +54,11 @@ const AddIncomePage = () => {
                 onChange={e => setAmount(e.target.value)}
                 margin="normal"
             />
-            <DatePicker
+            <TextField
                 label="Date"
-                value={dayjs(date)}
-                onChange={date => setDate(date)}
+                type='date'
+                value={dayjs(date).format('YYYY-MM-DD')}
+                onChange={e => setDate(e.target.value)}
                 renderInput={(params) => <TextField {...params} fullWidth margin="normal" variant="outlined" />}
             />
             <Button variant="contained" color="primary" onClick={onAddClick}>Add Income</Button>

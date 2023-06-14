@@ -1,6 +1,4 @@
 import { AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -28,9 +26,7 @@ const Layout = ({ children }) => {
                     </Toolbar>
                 </AppBar>
             </Box>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-                {children}
-            </LocalizationProvider>
+            {children}
         </>
     )
 }
