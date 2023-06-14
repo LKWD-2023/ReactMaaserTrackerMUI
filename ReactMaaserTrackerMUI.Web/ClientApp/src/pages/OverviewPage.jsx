@@ -43,11 +43,11 @@ const OverviewPage = () => {
             </Typography>
           </Box>
           <Box>
-          <Typography variant="h5" gutterBottom>
+            <Typography variant="h5" gutterBottom>
               Maaser Obligated: {formatCurrency(overview.obligatedAmount)}
             </Typography>
             <Typography variant="h5" gutterBottom>
-              Remaining Maaser obligation: {overview.remainingObligation < 0 ? "$0.00" :formatCurrency(overview.remainingObligation)}
+              Remaining Maaser obligation: {overview.remainingObligation < 0 ? "$0.00" : formatCurrency(overview.remainingObligation)}
             </Typography>
           </Box>
         </> : <>
