@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Checkbox, Container, FormControlLabel, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
 import axios from 'axios';
-import {formatDate, formatCurrency} from '../formatters';
+import { formatDate, formatCurrency } from '../formatters';
 
 const IncomePage = () => {
 
@@ -20,10 +20,10 @@ const IncomePage = () => {
     return incomePayments.reduce((arr, incomePayment) => {
       const currentName = incomePayment.incomeSource.name;
       const group = arr.find(p => p.source === currentName);
-      if(group) {
+      if (group) {
         group.incomes.push(incomePayment);
       } else {
-        arr.push({source: currentName, incomes: [incomePayment]});
+        arr.push({ source: currentName, incomes: [incomePayment] });
       }
 
       return arr;
